@@ -53,6 +53,11 @@ img {
     align-items: center;
 }
 
-.delete{
+.delete,
+.task .text{
     cursor: pointer;
+}
+
+.done-true{
+    text-decoration: line-through;
 }

@@ -21,14 +21,14 @@
          <main>
             <!-- text-area  -->
             <div class="input-text">
-                <input type="text" placeholder="Nuova Task">
-                <button>Aggiungi</button>
+                <input type="text" placeholder="Nuova Task" v-model="newTask">
+                <button @click="addNewTask">Aggiungi</button>
             </div>
             <!-- task area  -->
             <div class="tasks">
-                <div class="task">
-                   <span>task</span>
-                   <span class="delete"><i class="fa-solid fa-xmark"></i></span>
+                <div class="task" v-for="singletask, index in tasks" >
+                   <span class="text" :class="{'done-true': singletask.done === true }" @click="deleteTask(indexToDelete)">{{singletask.text}}</span>
+                   <span class="delete" @click="deleteItem(indexToDelete)"><i class="fa-solid fa-xmark"></i></span>
                 </div>
             </div>
          </main>

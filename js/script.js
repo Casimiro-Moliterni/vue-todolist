@@ -26,7 +26,52 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-     
+        done: false,
+        newTask:'',
+        tasks : [
+         {
+            text:'Butta la spazzatura',
+            done : true ,
+         },
+         {
+            text:'Porta fuori il cane',
+            done : true ,
+         },
+         {
+            text:'Buttare pianoforte',
+            done : false ,
+         },
+         {
+            text:'Fare la spesa',
+            done : true ,
+         },
+        ]
+
+    }
+  },
+  methods:{
+  
+    deleteTask(indexToDelete){
+   if(this.addNewTask === false) {
+    this.tasks(indexToDelete) = true
+
+}
+    },
+    deleteItem(indexToDelete){
+        this.tasks.splice(indexToDelete,1);
+    },
+    addNewTask(){
+       const trimstring = this.newTask.trim();
+       newObject = {
+       text : trimstring,
+       done : false,
+      }  
+   
+      if(trimstring.length >= 5 ){
+        this.tasks.push(newObject);
+        this.newTask='';
+      }
     }
   }
 }).mount('#app');
+
