@@ -3,3 +3,56 @@
     padding: 0;
     margin: 0;
 }
+
+/* header  */
+img {
+    max-width: 100%;
+}
+
+.logo{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo img{
+   height: 80px;
+}
+/* main  */
+
+.input-text{
+    text-align: center;
+}
+
+.input-text input{
+    margin-right:10px ;
+    width: 20%;
+}
+.input-text input,
+.input-text button{
+    padding: 10px 15px ;
+    border: 1px solid black;
+    border-radius: 15px;
+    font-weight: 400;
+}
+
+/* tasks  */
+
+.tasks{
+    background-color: lightblue;
+    width: 70%;
+    margin:0 auto;
+    margin-top:25px ;
+    padding: 25px;
+}
+
+.task{
+    padding: 7px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delete{
+    cursor: pointer;
+}
