@@ -26,7 +26,7 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-        done: false,
+        isError:false,
         newTask:'',
         tasks : [
          {
@@ -50,7 +50,14 @@ createApp({
     }
   },
   methods:{
-  
+     toggleDone(indexToChange){
+        if(this.tasks[indexToChange].done === true){
+          this.tasks[indexToChange].done = false;
+        } else {
+          this.tasks[indexToChange].done = true;
+        }
+
+     },
     deleteTask(indexToDelete){
    if(this.addNewTask === false) {
     this.tasks(indexToDelete) = true
@@ -68,8 +75,11 @@ createApp({
       }  
    
       if(trimstring.length >= 5 ){
-        this.tasks.push(newObject);
+        this.tasks.unshift(newObject);
         this.newTask='';
+        this.isError  = false;
+      } else{
+        this.isError= true;
       }
     }
   }

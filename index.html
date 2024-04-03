@@ -21,13 +21,14 @@
          <main>
             <!-- text-area  -->
             <div class="input-text">
-                <input type="text" placeholder="Nuova Task" v-model="newTask">
+                <input type="text" placeholder="Nuova Task" v-model="newTask" @keyup.enter="addNewTask()">
                 <button @click="addNewTask">Aggiungi</button>
+                <div class="error" v-if="isError" >Inserisci almeno 5 caratteri!</div>
             </div>
             <!-- task area  -->
             <div class="tasks">
                 <div class="task" v-for="singletask, index in tasks" >
-                   <span class="text" :class="{'done-true': singletask.done === true }" @click="deleteTask(indexToDelete)">{{singletask.text}}</span>
+                   <span @click="toggleDone(index)" class="text" :class="{'done-true': singletask.done === true }" @click="deleteTask(index)">{{singletask.text}}</span>
                    <span class="delete" @click="deleteItem(indexToDelete)"><i class="fa-solid fa-xmark"></i></span>
                 </div>
             </div>

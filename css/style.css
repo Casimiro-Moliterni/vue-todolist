@@ -61,3 +61,12 @@ img {
 .done-true{
     text-decoration: line-through;
 }
+.error{
+    padding: 10px;
+    width: 20%;
+    color: red;
+    background-color: lightgray;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 20px auto;
+}
